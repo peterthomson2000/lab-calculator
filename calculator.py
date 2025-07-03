@@ -1,4 +1,4 @@
-operations = ['+', '-', '*', '/']
+operators = ['+', '-', '*', '/']
 user_input = ''
 
 while True:
@@ -17,8 +17,8 @@ while True:
         equation = user_input.replace(" ", "")
 
         # Check if expression contains a valid operator
-        if any(op in equation for op in operations):
-            allowed_chars = "0123456789." + ''.join(operations)
+        if any(operators in equation for operators in operators):
+            allowed_chars = "0123456789." + ''.join(operators)
 
             if all(char in allowed_chars for char in equation):
                 # Check for division by zero
@@ -28,7 +28,7 @@ while True:
                         print("Error: Cannot divide by zero.")
                         continue  # Skip this round and restart the loop
 
-                # Evaluation is made sure to be saf
+                # Evaluation is made sure to be safe
                 # Exception is if all of these cases are not true (pairs with the try case)
                 try:
                     result = eval(equation)
@@ -41,4 +41,4 @@ while True:
             print("No valid operator found. Use one of '+', '-', '*', '/'")
 
     else:
-        print("Calculator is OFF...")
+        print("Calculator is ON...")
